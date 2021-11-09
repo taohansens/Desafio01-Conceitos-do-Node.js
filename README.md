@@ -88,8 +88,8 @@ A rota deve receber `name` e `username` dentro do body da requisição (JSON). A
 
 ```json
 { 
-	"name": 'Tao Hansen', 
-	"username": 'taohansens'
+	"name": "Tao Hansen", 
+	"username": "taohansens"
 }
 ```
 
