@@ -211,7 +211,7 @@ Testes realizados utilizando o framework [Jest · Delightful JavaScript Testing]
 
 Para completar o desafio, a aplicação foi aprovada nos seguintes testes:
 
-![Tests](assets\tests-approved.png)
+<img alt="Tests" src="./assets/tests-approved.png" />
 
 #### Testes de usuários
 
