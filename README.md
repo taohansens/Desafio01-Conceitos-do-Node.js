@@ -88,8 +88,8 @@ A rota deve receber `name` e `username` dentro do body da requisição (JSON). A
 
 ```json
 { 
-	name: 'Tao Hansen', 
-	username: 'taohansens'
+	"name": 'Tao Hansen', 
+	"username": 'taohansens'
 }
 ```
 
@@ -129,11 +129,11 @@ E a resposta do servidor ao enviar a requisição, se for um usuário válido se
 
 ````json
 {
-    id: "3009c173-772f-41b1-bc58-7259c5ccc671", // Gerado pela biblioteca uuid;
-    title: "Lavar o banheiro",
-    done: false, // Done sempre iniciará como False.
-    deadline: "2021-11-08T00:00:00.000Z",
-    created_at: "2021-11-09T01:50:19.545Z" // Momento da criação do ToDo.
+    "id": "3009c173-772f-41b1-bc58-7259c5ccc671", // Gerado pela biblioteca uuid;
+    "title": "Lavar o banheiro",
+    "done": false, // Done sempre iniciará como False.
+    "deadline": "2021-11-08T00:00:00.000Z",
+    "created_at": "2021-11-09T01:50:19.545Z" // Momento da criação do ToDo.
 }
 ````
 
@@ -141,7 +141,7 @@ Ou, se o username não existir, estendendo também a todas as outras rotas, reto
 
 ````json
 {
-    error: "User not found!"
+    "error": "User not found!"
 }
 ````
 
@@ -156,8 +156,8 @@ O username no header, e o Body:
 
 ````json
 {
-    title: "Tarefa Alterada",
-    deadline: "2022-11-08"
+    "title": "Tarefa Alterada",
+    "deadline": "2022-11-08"
 }
 ````
 
@@ -165,11 +165,11 @@ Como retorno o objeto alterado com a resposta HTTP 200 (OK).
 
 ````json
 {
-    id: "3009c173-772f-41b1-bc58-7259c5ccc671",
-    title: "Tarefa Alterada",
-    done: false,
-    deadline: "2022-11-08",
-    created_at: "2021-11-09T01:50:19.545Z"
+    "id": "3009c173-772f-41b1-bc58-7259c5ccc671",
+    "title": "Tarefa Alterada",
+    "done": false,
+    "deadline": "2022-11-08",
+    "created_at": "2021-11-09T01:50:19.545Z"
 }
 ````
 
@@ -177,7 +177,7 @@ Em caso de não existir o ToDo, isso também para as demais rotas incluídas ap�
 
 ````json
 {
-    error: "ToDo not found."
+    "error": "ToDo not found."
 }
 ````
 
@@ -190,11 +190,11 @@ O retorno será um objeto json com a resposta HTTP 200.
 
 ```````json
 {
-    id: "3009c173-772f-41b1-bc58-7259c5ccc671",
-    title: "Tarefa Alterada",
-    done: true,
-    deadline: "2022-11-08",
-    created_at: "2021-11-09T01:50:19.545Z"
+    "id": "3009c173-772f-41b1-bc58-7259c5ccc671",
+    "title": "Tarefa Alterada",
+    "done": true,
+    "deadline": "2022-11-08",
+    "created_at": "2021-11-09T01:50:19.545Z"
 }
 ```````
 
@@ -203,7 +203,7 @@ O retorno será um objeto json com a resposta HTTP 200.
 
 A rota deve receber, pelo header da requisição, uma propriedade `username` contendo o username do usuário e excluir o *todo* que possuir um `id` igual ao `id` presente nos parâmetros da rota. A resposta não terá conteúdo, será apenas o HTTP 204.
 
-Na pasta "Postman" contém uma collection exportada com todas as requisições salvas.
+Na pasta "Postman" contém uma Collection exportada com todas as requisições salvas.
 
 ## Especificação dos testes
 
@@ -211,7 +211,7 @@ Testes realizados utilizando o framework [Jest · Delightful JavaScript Testing]
 
 Para completar o desafio, a aplicação foi aprovada nos seguintes testes:
 
-![image-20211108231803313](T:\TEMP\ignite-conceitos-nodejs\assets\tests-approved.png)
+![Tests](assets\tests-approved.png)
 
 #### Testes de usuários
 
