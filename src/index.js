@@ -54,14 +54,16 @@ app.post('/users', (request, response) => {
     return response.status(400).json({ error: "User already exists!"});
   }
 
-  users.push({
+  newUser = {
     id: uuidv4(),
     name,
     username,
     todos: []
-  });
+  }
 
-  return response.status(201).send();
+  users.push(newUser);
+
+  return response.status(201).json(newUser);
 });
 
 app.get('/todos', checksExistsUserAccount, (request, response) => {
@@ -101,7 +103,7 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   todo.title = title;
   todo.deadline = deadline;
 
-  return response.status(204).send()
+  return response.status(200).json(todo)
 });
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
@@ -116,7 +118,7 @@ app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
   
   todo.done = true;
 
-  return response.status(204).send()
+  return response.status(200).json(todo);
 });
 
 app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
